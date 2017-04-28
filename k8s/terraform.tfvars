@@ -1,0 +1,8 @@
+region = "us-central1"
+region_zone = "us-central1-a"
+project = "k8s-prom"
+image = "ubuntu-os-cloud/ubuntu-1404-trusty-v20161020"
+credentials_file_path = "credentials/terraform.json"
+public_key_path = "credentials/harshals_pub.txt"
+private_key_path = "credentials/harshals.ppk"
+machine_type = "n1-standard-2"
