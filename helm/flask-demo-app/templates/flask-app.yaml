@@ -1,0 +1,40 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: webapp
+  labels:
+    name: webapp
+spec:
+  ports:
+    - port: 80
+      targetPort: 5000
+  selector:
+    name: webapp
+  type: LoadBalancer
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: webapp
+spec:
+  replicas: {{ .Values.Replicas }}
+  template:
+    metadata:
+      labels:
+        name: webapp
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9999"
+        prometheus.io/path: ""
+    spec:
+      containers:
+      - name: webapp
+        image: {{ .Values.ImageName }}:{{ .Values.ImageTag }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        - containerPort: 9999
+        resources:
+          requests:
+            cpu: 500m
+            memory: 500Mi

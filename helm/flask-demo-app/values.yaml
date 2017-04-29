@@ -1,0 +1,3 @@
+ImageName: insightdatascience/webapp-demo
+ImageTag: prometheus
+Replicas: 1

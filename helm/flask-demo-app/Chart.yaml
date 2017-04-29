@@ -1,0 +1,9 @@
+name: flask-demo-app
+version: 0.0.1
+description: A demo flask app which sends metrics to prometheus. This APP will query github for any public repositories.
+sources:
+  - https://github.com/InsightDataScience/flask-kube-prometheus/tree/master/webapp
+maintainers:
+  - name: Harshal Shah
+    email: harshal@infracloud.io
+engine: gotpl
