@@ -4,7 +4,7 @@ resource "google_compute_firewall" "default" {
 
   allow {
     protocol = "tcp"
-    ports    = ["80","8080","5000", "9411", "30001", "30002", "31601"]
+    ports    = ["80","8080"]
   }
   allow {
   	protocol = "udp"
