@@ -2,3 +2,4 @@
 k8s/credentials/*.json
 k8s/credentials/harshal*
 k8s/terraform.tfstate*
+helm/*.tgz
